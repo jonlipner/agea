@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 320px) {
+  #insideContainer {
+    padding: 20px !important;
+  }
+
+  #mainData div, #mainData img, #imgFoot div, #imgFoot img {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  #mainData img, #imgFoot img {
+    width: 100% !important;
+  }
+
+  #text {
+    display: none;
+  }
+}
+@media (min-width: 321px) and (max-width: 1024px) {
+  #mainData div, #mainData img, #imgFoot div, #imgFoot img {
+    width: 50%;
+    flex-wrap: wrap;
+  }
+  #mainData img, #imgFoot img {
+    width: 320px !important;
+  }
+}
+#container {
+  max-width: 1256px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+#container img {
+  width: 250px;
+}
+#container h3, #container p, #container ul {
+  font-family: "Roboto", sans-serif;
+}
+
+#insideContainer {
+  padding: 50px;
+}
+
+#mainData, #imgFoot {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#mainData div, #mainData img, #imgFoot div, #imgFoot img {
+  flex-grow: 1;
+  justify-content: space-between;
+}
+#mainData ul, #imgFoot ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#video img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

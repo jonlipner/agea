@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="stylesheet" href="styles/css/styles.css">
+        <script type="text/javascript" src="js/tracker.js"></script>
+        <title>Agea</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="insideContainer">
+                <div id="mainData">
+                    <div>
+                        <img data-src="img/agea1.jpg" loading="lazy" alt="logo agea" class="lazyload"/>
+                    </div>
+                    <div>
+                        <h3>Datos personales</h3>
+                        <ul>
+                            <li>Nombre</li>
+                            <li>Edad</li>
+                            <li>Mail</li>
+                            <li>Teléfono</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Conocimientos</h3>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JS</li>
+                            <li>Angular</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Hobbies</h3>
+                        <ul>
+                            <li>Cantar</li>
+                            <li>Comer</li>
+                            <li>Guitarra</li>
+                            <li>Cocinar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rhoncus, orci ac aliquet elementum, magna quam scelerisque odio, et vulputate elit purus id velit. Sed malesuada eros nec ex tempus molestie. Proin vitae nisi accumsan nulla blandit fringilla. Curabitur ac nunc nec diam congue euismod. Fusce egestas lobortis nunc vitae consectetur. Maecenas sit amet orci posuere, malesuada lectus nec, pharetra lorem. Phasellus nulla dolor, tristique non porta ac, cursus eget arcu. Aliquam eu ligula mollis, vulputate ligula quis, euismod arcu. Curabitur sollicitudin pellentesque molestie. Vivamus elit velit, pellentesque at purus id, ullamcorper dapibus metus. Nulla sed posuere ex. Aenean interdum neque at tortor accumsan, sed tempus risus posuere. In cursus massa nec quam varius, ut suscipit nibh lobortis. Maecenas sodales nunc non facilisis rutrum.
+                    </p>
+                </div>
+                <div id="video">
+                    <img onclick="launchVideo(event)" data-src="https://img.youtube.com/vi/c17Dxb5dIDA/hqdefault.jpg" data-video="https://www.youtube.com/watch?v=c17Dxb5dIDA?wmode=transparent&autoplay=1" loading="lazy" alt="video agea" class="lazyload"/>
+                </div>
+                <div id="imgFoot">
+                    <img data-src="img/agea1.jpg" loading="lazy" alt="logo agea" class="lazyload"/>
+                    <img data-src="img/agea1.jpg" loading="lazy" alt="logo agea" class="lazyload"/>
+                    <img data-src="img/agea1.jpg" loading="lazy" alt="logo agea" class="lazyload"/>
+                    <img data-src="img/agea1.jpg" loading="lazy" alt="logo agea" class="lazyload"/>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <script>
+            if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll("img.lazyload");
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            } else {
+                let script = document.createElement("script");
+                script.async = true;
+                script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js";
+                document.body.appendChild(script);
+            }
+        </script>
+        <script>
+            const launchVideo = (evt) => {
+                evt.preventDefault();
+                let th = evt.srcElement;
+                let embed_url = th.dataset.video;
+                let width = th.width;
+                let height = th.height;
+                let iframe = document.createElement('iframe');
+                iframe.src = embed_url; 
+                iframe.width = width;
+                iframe.height = height;
+                iframe.style.zIndex = 200;
+                iframe.style.position = "absolute";
+                th.before(iframe);
+            };
+         </script>
+    </body>
+</html>
